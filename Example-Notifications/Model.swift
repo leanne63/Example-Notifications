@@ -15,11 +15,6 @@ class Model {
 	let notificationTWOName = Notification.Name("NotificationTWO")
 	let notificationTHREEName = Notification.Name("NotificationTHREE")
 	
-	init() {
-		notifyObserversTWO()
-		NotificationCenter.default.post(name: notificationTWOName, object: self)
-	}
-	
 	
 	// MARK: - Observer-Related Methods
 	
