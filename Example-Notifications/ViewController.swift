@@ -10,13 +10,17 @@ import UIKit
 class ViewController: UIViewController {
 	
 	// MARK: - Constants
-	let notificationONESelector = #selector(didReceiveNotificationONE)
+	
+	let notificationONEModelSelector = #selector(didReceiveNotificationONEFromModel)
+	let notificationONEModel2Selector = #selector(didReceiveNotificationONEFromModel2)
 	let notificationTWOSelector = #selector(didReceiveNotificationTWO)
 	let notificationTHREESelector = #selector(didReceiveNotificationTHREE)
+	
 
 	// MARK: - Properties
 	
 	let model = Model()
+	let model2 = Model2()
 	
 	
 	// MARK: - Lifecycle Overrides
@@ -25,31 +29,52 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		subscribeToNotifications()
+		print("-----")
 		model.notifyObserversONE()
+		print("-----")
 		model.notifyObserversTWO()
+		print("-----")
+		model2.notifyObserversONE()
+		print("-----")
+		model2.notifyObserversTWO()
+		print("-----")
 	}
 	
 	
 	// MARK: - Observer-Related Methods
 	
 	func subscribeToNotifications() {
+		// This observer request wants ONLY matching notifications from the model (object: model)
 		NotificationCenter.default.addObserver(self,
-											   selector: notificationONESelector,
-											   name: model.notificationONEName,
+											   selector: notificationONEModelSelector,
+											   name: NotificationName.someONEThingDidOccur,
 											   object: model)
 		
+		// This observer request wants ONLY matching notifications from the second model (object: model2)
+		NotificationCenter.default.addObserver(self,
+											   selector: notificationONEModel2Selector,
+											   name: NotificationName.someONEThingDidOccur,
+											   object: model2)
+		
+		// The following observer requests will accept their notifications from any object (object: nil)
 		NotificationCenter.default.addObserver(self,
 											   selector: notificationTWOSelector,
-											   name: model.notificationTWOName,
+											   name: NotificationName.someTWOThingDidOccur,
 											   object: nil)
 
 		NotificationCenter.default.addObserver(self,
 											   selector: notificationTHREESelector,
-											   name: model.notificationTHREEName,
+											   name: NotificationName.someTHREEThingDidOccur,
 											   object: nil)
 	}
 	
-	@objc func didReceiveNotificationONE(notification: Notification) {
+	@objc func didReceiveNotificationONEFromModel(notification: Notification) {
+		print("START \(ViewController.self).\(#function)")
+		exampleUtilityFunction()
+		print("END \(ViewController.self).\(#function)")
+	}
+	
+	@objc func didReceiveNotificationONEFromModel2(notification: Notification) {
 		print("START \(ViewController.self).\(#function)")
 		exampleUtilityFunction()
 		print("END \(ViewController.self).\(#function)")
