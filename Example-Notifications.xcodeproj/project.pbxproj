@@ -12,6 +12,7 @@
 		D53864041FCF157B002CA2B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53864021FCF157B002CA2B3 /* Main.storyboard */; };
 		D53864061FCF157B002CA2B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53864051FCF157B002CA2B3 /* Assets.xcassets */; };
 		D53864091FCF157B002CA2B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53864071FCF157B002CA2B3 /* LaunchScreen.storyboard */; };
+		D53864111FCF1743002CA2B3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53864101FCF1743002CA2B3 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D53864051FCF157B002CA2B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D53864081FCF157B002CA2B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D538640A1FCF157B002CA2B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D53864101FCF1743002CA2B3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,13 @@
 		D53863FD1FCF157B002CA2B3 /* Example-Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				D53863FE1FCF157B002CA2B3 /* AppDelegate.swift */,
 				D53864001FCF157B002CA2B3 /* ViewController.swift */,
+				D53864101FCF1743002CA2B3 /* Model.swift */,
 				D53864021FCF157B002CA2B3 /* Main.storyboard */,
 				D53864051FCF157B002CA2B3 /* Assets.xcassets */,
 				D53864071FCF157B002CA2B3 /* LaunchScreen.storyboard */,
 				D538640A1FCF157B002CA2B3 /* Info.plist */,
+				D53863FE1FCF157B002CA2B3 /* AppDelegate.swift */,
 			);
 			path = "Example-Notifications";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53864111FCF1743002CA2B3 /* Model.swift in Sources */,
 				D53864011FCF157B002CA2B3 /* ViewController.swift in Sources */,
 				D53863FF1FCF157B002CA2B3 /* AppDelegate.swift in Sources */,
 			);
@@ -274,6 +278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2H5WRG5QL;
 				INFOPLIST_FILE = "Example-Notifications/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leanne63.Example-Notifications";
@@ -288,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2H5WRG5QL;
 				INFOPLIST_FILE = "Example-Notifications/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leanne63.Example-Notifications";
